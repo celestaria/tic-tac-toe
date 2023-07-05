@@ -17,5 +17,6 @@ code {
   width: 100px;
   font-size: 30px;
   margin: 5px;
+  vertical-align: middle;
 }
 
