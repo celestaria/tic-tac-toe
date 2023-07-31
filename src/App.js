@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './App.css'
 
 function Square({ value, onSquareClick }) {
   return (
@@ -32,6 +33,8 @@ function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <>
+      <div className='background'>
+      <h1>Tic Tac Toe</h1>
       <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -47,6 +50,7 @@ function Board({ xIsNext, squares, onPlay }) {
         <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
       </div>
     </>
   );
@@ -77,7 +81,7 @@ export default function Game() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button className='moves' onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
@@ -88,7 +92,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <ol>{moves}</ol>
+        <ol className='moves'>{moves}</ol>
       </div>
     </div>
   );

@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-image: url('./resources/background.jpeg');
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.background {
+  background: white;
+}
+
+h1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: black;
+  font-size: 5vw; /* Responsive font size based on viewport width */
+  margin-top: 1rem; /* Add some spacing from the top */
+}
+
+.board-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%; /* Allow the board to take the full width of the viewport */
+}
+
+.square {
+  height: 10rem;
+  width: 10rem; 
+  margin: .5vw .5vh; 
+  color: black;
+  background-color: lightgrey;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.status {
+  color: black;
+  font-size: 2.5rem;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.moves {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  list-style-type: none;
+}
+
+.moves button {
+  display: flex;
+  color: black;
+  background-color: lightgrey;
+  height: 1.2rem;
+  width: 10rem;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .board-row {
+    max-width: 90vw;
+  }
+
+  .square {
+    height: 8rem;
+    width: 8rem;
+    font-size: 3rem;
+  }
+
+  .status {
+    font-size: 2rem;
+  }
+
+  .moves button {
+    height: 1.2rem;
+    width: 5rem;
+    font-size: .5rem;
   }
 }
