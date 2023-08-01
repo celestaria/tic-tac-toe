@@ -20,15 +20,15 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   color: black;
-  font-size: 5vw; /* Responsive font size based on viewport width */
-  margin-top: 1rem; /* Add some spacing from the top */
+  font-size: 4vw; 
+  margin-top: 1rem;
 }
 
 .board-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 100%; /* Allow the board to take the full width of the viewport */
+  max-width: 100%; 
 }
 
 .square {
@@ -41,17 +41,64 @@ h1 {
   align-items: center;
   justify-content: center;
   font-size: 5rem;
+  border-radius: 5px;
 }
 
 .status {
   color: black;
   font-size: 2.5rem;
   display: flex;
-  position: sticky;
   align-items: center;
   justify-content: center;
   height: 2rem;
   margin-bottom: 1rem;
+}
+
+.modal-container {
+  text-align: center;
+  margin: 2rem;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-inner {
+  color: black;
+  font-size: 1.5rem;
+  max-width: 90vw;
+}
+
+.button {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+.modal-inner button {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: lightgrey;
+  height: 2rem;
+  width: 7rem;
+  margin-top: 1rem;
 }
 
 .moves {
@@ -63,11 +110,8 @@ h1 {
 }
 
 .moves button {
-  display: flex;
-  color: black;
-  background-color: lightgrey;
   height: 1.2rem;
-  width: 10rem;
+  width: 9rem;
 }
 
 @media screen and (max-width: 768px) {
