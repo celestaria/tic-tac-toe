@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
 import './App.css'
-import Modal from 'react-modal';
 
 function Square({ value, onSquareClick }) {
   return (
@@ -31,19 +30,6 @@ function Board({ xIsNext, squares, onPlay }) {
     status = 'Winner: ' + winner;
   } else {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
-  }
-
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-  }
-
-  function closeModal() {
-    setIsOpen(false);
   }
 
   return (
