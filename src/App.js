@@ -67,25 +67,6 @@ function Board({ xIsNext, squares, onPlay }) {
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
         </div>
-        <div className='modal-container'>
-          <button className='button' onClick={openModal}>Rules</button>
-          <Modal
-            className = 'modal'
-            isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            contentLabel="Example Modal"
-          >
-            <div className='modal-inner'>
-              <h2>Rules</h2>
-              <ul>Players take turns putting their marks in empty squares.</ul>
-              <ul>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</ul>
-              <ul>When all 9 squares are full, the game is over.</ul>
-              <ul>If no player has 3 marks in a row, the game ends in a tie.</ul>
-              <button className='button' onClick={closeModal}>Back</button>
-            </div>
-        </Modal>
-        </div>
       </>
     );
   }
@@ -120,6 +101,11 @@ function Board({ xIsNext, squares, onPlay }) {
       );
     });
 
+    function restartGame() {
+      setHistory([Array(9).fill(null)]);
+      setCurrentMove(0);
+    }
+
     return (
       <div className= "background">
       <div className="game">
@@ -127,7 +113,7 @@ function Board({ xIsNext, squares, onPlay }) {
           <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
         </div>
         <div className="game-info">
-          <ol className='moves'>{moves}</ol>
+        <button className="button" onClick={restartGame}>Restart</button>
         </div>
       </div>
       
