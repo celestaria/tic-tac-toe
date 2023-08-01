@@ -50,6 +50,23 @@ function Board({ xIsNext, squares, onPlay }) {
     <>
       <div className='background'>
         <h1>Tic Tac Toe</h1>
+        <div className="status">{status}</div>
+        <div className="board-row">
+          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+        </div>
+        <div className="board-row">
+          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+        </div>
+        <div className="board-row">
+          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        </div>
+        </div>
         <div className='modal-container'>
           <button className='button' onClick={openModal}>Rules</button>
           <Modal
@@ -68,23 +85,6 @@ function Board({ xIsNext, squares, onPlay }) {
               <button className='button' onClick={closeModal}>Back</button>
             </div>
         </Modal>
-        </div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-        </div>
-        <div className="board-row">
-          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-        </div>
-        <div className="board-row">
-          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-        </div>
         </div>
       </>
     );
@@ -121,6 +121,7 @@ function Board({ xIsNext, squares, onPlay }) {
     });
 
     return (
+      <div className= "background">
       <div className="game">
         <div className="game-board">
           <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
@@ -128,6 +129,8 @@ function Board({ xIsNext, squares, onPlay }) {
         <div className="game-info">
           <ol className='moves'>{moves}</ol>
         </div>
+      </div>
+      
       </div>
     );
   }
